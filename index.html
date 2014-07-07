@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The Lemon web</title>
+	
+
+	<style>
+		
+		body {
+ 			 background: #fff;
+ 			 margin: auto 0;
+
+		}
+		header {
+  			background: #000;
+ 			height: 125px;
+  			width: 100%;
+  			position: relative;
+  			display: block;
+		}
+		#cuerpo {
+  			height: 800px;
+		}
+		#menu {
+ 			 height: 50px;
+ 			 background-color: #333;
+ 			 width: 100%;
+ 			 float: left;
+ 			 margin-top: 0;
+		}
+		.fijo {
+ 			 position: fixed;
+ 			 top: 0;
+ 			 width: 100%;
+			 margin-top: 0;
+			}
+</style>
+</head>
+<body>
+	<header>
+
+	</header>
+	<nav id="menu">
+
+	</nav>	
+
+	<section id="cuerpo">
+		
+	</section>
+
+
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script>
+		$(document).ready();
+		var menu = $('#menu');
+		var menuOffset= menu.offset();
+
+		$(window).on('scroll', function(){
+		
+			if($(window).scrollTop() > menuOffset.top){
+
+				menu.addClass('fijo');
+		}else{
+
+				menu.removeClass('fijo');
+		}
+});
+
+	</script>
+</body>
+</html>
